@@ -4,7 +4,7 @@
         <nav class="fixed top-0 z-10 w-full mx-auto flex justify-between items-center bg-gray-50 py-3 px-12">
             <a href="" class="flex items-center gap-2">
                 <img src="img/leao.svg" alt="">
-                <h1 class="text-2xl font-chakra">HaShem</h1>
+                <h1 class="text-2xl font-chakra font-semibold">HaShem</h1>
             </a>
 
             <ul class="hidden lg:flex items-center gap-5 uppercase text-sm font-semibold">
@@ -29,12 +29,15 @@
                 </li>
             </ul>
 
-            <button class="hidden lg:block back-gold uppercase font-semibold text-sm px-4 py-2 rounded">
+            <button
+                class="hidden lg:flex back-gold items-center gap-2 uppercase font-semibold text-sm px-4 py-2 rounded">
+                <img class="w-7 color-gold" src="img/whatsapp.svg" alt="">
                 Agendar Aula
             </button>
 
 
-            <button class="block lg:hidden bg-gray-200 p-2 rounded-full color-gold cursor-pointer">
+            <button (click)="menuOpen = true"
+                class="block lg:hidden bg-gray-200 p-2 rounded-full color-gold cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-menu-icon lucide-menu">
@@ -43,6 +46,68 @@
                     <path d="M4 19h16" />
                 </svg>
             </button>
+
+            <div *ngIf="menuOpen" (click)="menuOpen = false"
+                class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-all duration-300">
+
+            </div>
+
+            <aside [class.translate-x-0]="menuOpen" [class.translate-x-full]="!menuOpen"
+                class="fixed top-0 right-0 z-50 h-screen w-80 bg-white shadow-2xl transition-transform duration-500 ease-in-out">
+
+                <div class="flex items-center justify-between p-4">
+
+                    <div class="flex items-center gap-1">
+                        <img src="img/leao.svg" class="w-22">
+                        <h1 class="text-2xl font-chakra font-semibold">HaShem</h1>
+                    </div>
+
+                    <button (click)="menuOpen=false"
+                        class="bg-gray-100 rounded color-gold cursor-pointer transition-all hover:scale-95">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-x-icon lucide-x">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+
+                </div>
+
+                <nav class="uppercase text-sm font-semibold">
+
+                    <a href="#" class="block px-8 py-4 hover:text-[#C7AA62] transition">
+                        Início
+                    </a>
+
+                    <a href="#" class="block px-8 py-4 hover:text-[#C7AA62] transition">
+                        Sobre
+                    </a>
+
+                    <a href="#" class="block px-8 py-4 hover:text-[#C7AA62] transition">
+                        Modalidades
+                    </a>
+
+                    <a href="#" class="block px-8 py-4 hover:text-[#C7AA62] transition">
+                        Planos
+                    </a>
+
+                    <a href="#" class="block px-8 py-4 hover:text-[#C7AA62] transition">
+                        Contato
+                    </a>
+
+                </nav>
+
+                <div class="absolute bottom-8 left-0 w-full px-8">
+                    <button
+                        class="flex items-center gap-2 w-full back-gold items-center gap-2 uppercase font-semibold text-sm px-4 py-2 rounded cursor-pointer">
+                        <img class="w-7 color-gold" src="img/whatsapp.svg" alt="">
+                        Agendar Aula
+                    </button>
+                </div>
+
+            </aside>
 
         </nav>
 
@@ -60,7 +125,7 @@
                     <span class="uppercase font-semibold text-sm sm:text-md">Bem-vindo à</span>
                 </div>
 
-                <h1 class="font-chakra text-6xl md:text-8xl lg:text-9xl">HaShem</h1>
+                <h1 class="font-chakra font-semibold text-6xl md:text-8xl lg:text-9xl">HaShem</h1>
 
                 <div class="flex items-center gap-3 md:text-xl lg:text-3xl uppercase tracking-widest font-semibold">
                     <span>Jiu Jitsu</span>
@@ -92,7 +157,6 @@
                     </svg>
                     Agendar Aula Experimental</button>
             </div>
-
 
         </section>
     </header>
@@ -144,4 +208,73 @@
             </div>
         </div>
     </section>
+
+    <main class="mt-[55rem] sm:mt-[30rem] lg:mt-56">
+        <section class="container mx-auto">
+            <div class="grid lg:grid-cols-2 justify-center items-center">
+                <div class="flex justify-center">
+                    <img class="w-2/3 rounded" src="img/logo-hashem.svg" alt="">
+                </div>
+
+                <div class="p-4 text-2xl text-gray-700 space-y-4 font-chakra">
+                    <p class="">
+                        ​A Hashem nasce com um propósito que vai além dos tatames: <span class="color-gold">entender que
+                            o corpo é o reflexo da
+                            alma.</span>
+                    </p>
+
+                    <p>
+                        Não estamos aqui apenas para ensinar técnicas de combate, mas para <span class="color-gold">
+                            cultivar o equilíbrio
+                            necessário </span>
+                        para enfrentar as lutas diárias, <span class="color-gold">dentro e fora da academia.</span>
+                    </p>
+
+                    <p>
+                        ​O verdadeiro guerreiro não é aquele que apenas domina o <span
+                            class="color-gold">adversário</span>, mas aquele que domina a
+                        <span class="color-gold">si
+                            mesmo.</span>
+                    </p>
+
+                    <h1>​Seja bem-vindo à <span class="color-gold">HaShem</span>. Onde <span class="color-gold">corpo e
+                            alma</span> se tornam um só</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto mt-32">
+            <span class="font-semibold uppercase text-xl bg-gray-100 p-2 border-l-3">Modalidades</span>
+            <p class="mt-2 px-3 text-lg font-chakra">Desenvolvemos atletas e pessoas através da disciplina, técnica e
+                dedicação.</p>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-2 gap-10">
+                    <div class="flex gap-5 rounded shadow-2xl">
+                        <img class="w-96 rounded-l" src="img/modalidade-jiu.png" alt="">
+
+                        <div class="space-y-3 py-7">
+                            <h1 class="uppercase text-2xl font-semibold text-center">Jiu <span class="color-gold">Jitsu</span></h1>
+
+                            <p class="text-lg font-chakra text-center px-3">Defesa pessoal, disciplina, técnica e evolução. </p>
+
+                            <h1 class="uppercase font-semibold text-center">Adulto | Kids</h1>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5 rounded shadow-2xl">
+                        <div class="space-y-3 py-7 ">
+                            <h1 class="text-center uppercase text-2xl font-semibold"><span class=" color-gold " >Muay</span> Thai</h1>
+
+                            <p class="text-lg font-chakra text-center px-3">Condicionamento físico, resistência e explosão.</p>
+
+                            <h1 class="uppercase font-semibold text-center">Adulto | Kids</h1>
+                        </div>
+
+                        <img class="w-96 rounded-l" src="img/modalidade-thai.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </section>
