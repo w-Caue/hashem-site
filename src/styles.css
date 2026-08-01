@@ -4,6 +4,7 @@
 
 * {
     letter-spacing: 3px;
+    scroll-behavior: smooth;
 }
 
 .color-gold {
