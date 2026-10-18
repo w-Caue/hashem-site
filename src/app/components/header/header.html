@@ -1,0 +1,319 @@
+<header id="home" class="relative">
+
+  <!-- NAVBAR -->
+  <nav class="fixed left-0 top-0 z-50 w-full transition-all duration-500" [class.bg-[#1D2E47]/95]="scrolled"
+    [class.backdrop-blur-xl]="scrolled" [class.shadow-xl]="scrolled" [class.bg-transparent]="!scrolled">
+
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 lg:px-8"
+      [class.py-3]="scrolled" [class.py-5]="!scrolled">
+
+      <!-- LOGO TEMPORÁRIA -->
+      <a href="#home" class="group flex items-center gap-3">
+
+        <div
+          class="flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+          <img class="size-12" src="img/hashem-logo.svg" alt="logo">
+        </div>
+
+        <div class="leading-none">
+
+          <h1 class="font-chakra text-2xl font-bold tracking-wide transition-all duration-300"
+            [class.text-white]="!scrolled" [class.text-[#C7AA62]]="scrolled">
+            HaShem
+          </h1>
+
+          <p class="mt-1 text-[8px] uppercase tracking-[4px] transition-all duration-300"
+            [class.text-[#C7AA62]]="!scrolled" [class.text-white/50]="scrolled">
+            Artes Marciais
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <!-- MENU DESKTOP -->
+      <ul class="hidden items-center gap-8 lg:flex">
+
+        <li>
+          <a href="#home" class="group relative py-2 text-sm font-semibold uppercase tracking-wide transition-colors"
+            [class.text-white]="!scrolled" [class.text-white/80]="scrolled" [class.hover:text-[#C7AA62]]="true">
+            Início
+
+            <span
+              class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#C7AA62] transition-all duration-300 group-hover:w-full"></span>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="#about" class="group relative py-2 text-sm font-semibold uppercase tracking-wide transition-colors"
+            [class.text-white]="!scrolled" [class.text-white/80]="scrolled" [class.hover:text-[#C7AA62]]="true">
+            Sobre
+
+            <span
+              class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#C7AA62] transition-all duration-300 group-hover:w-full"></span>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="#modalities"
+            class="group relative py-2 text-sm font-semibold uppercase tracking-wide transition-colors"
+            [class.text-white]="!scrolled" [class.text-white/80]="scrolled" [class.hover:text-[#C7AA62]]="true">
+            Modalidades
+
+            <span
+              class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#C7AA62] transition-all duration-300 group-hover:w-full"></span>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="#store"
+            class="group relative py-2 text-sm font-semibold uppercase tracking-wide transition-colors"
+            [class.text-white]="!scrolled" [class.text-white/80]="scrolled" [class.hover:text-[#C7AA62]]="true">
+            Loja
+
+            <span
+              class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#C7AA62] transition-all duration-300 group-hover:w-full"></span>
+
+          </a>
+        </li>
+
+        <li>
+          <a href="#plans" class="group relative py-2 text-sm font-semibold uppercase tracking-wide transition-colors"
+            [class.text-white]="!scrolled" [class.text-white/80]="scrolled" [class.hover:text-[#C7AA62]]="true">
+            Planos
+
+            <span
+              class="absolute bottom-0 left-0 h-0.5 w-0 bg-[#C7AA62] transition-all duration-300 group-hover:w-full"></span>
+
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- CTA DESKTOP -->
+      <a href="https://wa.me/5585992705922" target="_blank"
+        class="hidden items-center gap-2 rounded-full bg-[#C7AA62] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#1D2E47] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#d8bc75] hover:shadow-xl lg:flex">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        Agendar Aula
+      </a>
+
+
+      <!-- MENU MOBILE -->
+      <button (click)="menuOpen = true"
+        class="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/10 text-white backdrop-blur-md transition-all duration-300 hover:bg-[#C7AA62] hover:text-[#1D2E47] lg:hidden"
+        aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- OVERLAY MOBILE -->
+  <div *ngIf="menuOpen" (click)="menuOpen = false" class="fixed inset-0 z-60 bg-black/60 backdrop-blur-sm lg:hidden">
+  </div>
+
+
+  <!-- MENU MOBILE -->
+  <aside [class.translate-x-0]="menuOpen" [class.translate-x-full]="!menuOpen"
+    class="fixed right-0 top-0 z-70 h-screen w-[88%] max-w-sm bg-[#1D2E47] text-white shadow-2xl transition-transform duration-500 lg:hidden">
+
+    <div class="flex items-center justify-between border-b border-white/10 px-6 py-5">
+
+      <div>
+
+        <span class="font-chakra text-2xl font-bold text-[#C7AA62]">
+          HaShem
+        </span>
+
+        <span class="block text-[8px] uppercase tracking-[4px] text-white/50">
+          Artes Marciais
+        </span>
+
+      </div>
+
+      <button (click)="menuOpen = false"
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-[#C7AA62] hover:text-[#1D2E47]"
+        aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <nav class="px-6 py-8">
+
+      <a href="#home" (click)="menuOpen = false"
+        class="group flex items-center justify-between border-b border-white/10 py-5 text-sm font-semibold uppercase tracking-wider transition hover:text-[#C7AA62]">
+        <span>Início</span>
+        <i
+          class="fa-solid fa-arrow-right text-xs text-[#C7AA62] opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"></i>
+      </a>
+
+      <a href="#about" (click)="menuOpen = false"
+        class="group flex items-center justify-between border-b border-white/10 py-5 text-sm font-semibold uppercase tracking-wider transition hover:text-[#C7AA62]">
+        <span>Sobre</span>
+        <i
+          class="fa-solid fa-arrow-right text-xs text-[#C7AA62] opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"></i>
+      </a>
+
+      <a href="#modalities" (click)="menuOpen = false"
+        class="group flex items-center justify-between border-b border-white/10 py-5 text-sm font-semibold uppercase tracking-wider transition hover:text-[#C7AA62]">
+        <span>Modalidades</span>
+        <i
+          class="fa-solid fa-arrow-right text-xs text-[#C7AA62] opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"></i>
+      </a>
+
+      <a href="#store" (click)="menuOpen = false"
+        class="group flex items-center justify-between border-b border-white/10 py-5 text-sm font-semibold uppercase tracking-wider transition hover:text-[#C7AA62]">
+        <span>Loja</span>
+        <i
+          class="fa-solid fa-arrow-right text-xs text-[#C7AA62] opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"></i>
+      </a>
+
+      <a href="#plans" (click)="menuOpen = false"
+        class="group flex items-center justify-between border-b border-white/10 py-5 text-sm font-semibold uppercase tracking-wider transition hover:text-[#C7AA62]">
+        <span>Planos</span>
+        <i
+          class="fa-solid fa-arrow-right text-xs text-[#C7AA62] opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"></i>
+      </a>
+
+      <a href="#contact" (click)="menuOpen = false"
+        class="group flex items-center justify-between border-b border-white/10 py-5 text-sm font-semibold uppercase tracking-wider transition hover:text-[#C7AA62]">
+        <span>Contato</span>
+        <i
+          class="fa-solid fa-arrow-right text-xs text-[#C7AA62] opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"></i>
+      </a>
+
+    </nav>
+
+
+    <div class="absolute bottom-8 left-0 w-full px-6">
+
+      <a href="https://wa.me/5585992705922" target="_blank"
+        class="flex w-full items-center justify-center gap-3 rounded-full bg-[#C7AA62] px-6 py-4 text-sm font-bold uppercase tracking-wide text-[#1D2E47]">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        Agendar Aula
+      </a>
+
+    </div>
+
+  </aside>
+
+
+  <!-- HERO -->
+  <section class="relative h-162.5 w-full overflow-hidden md:h-175 lg:h-195">
+
+    <img src="img/background.png" alt="Treino de Jiu-Jitsu na HaShem Artes Marciais"
+      class="absolute inset-0 hidden h-full w-full object-cover md:block">
+
+    <img src="img/back-mobile.png" alt="HaShem Artes Marciais"
+      class="absolute inset-0 h-full w-full object-cover md:hidden">
+
+
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-linear-to-r from-[#111d2e]/95 via-[#1D2E47]/70 to-transparent"></div>
+
+    <div class="absolute inset-0 bg-linear-to-t from-[#111d2e]/60 via-transparent to-transparent"></div>
+
+
+    <!-- HERO CONTENT -->
+    <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-16 lg:px-8">
+
+      <div class="max-w-3xl">
+
+        <div class="mb-6 flex items-center gap-3">
+
+          <span class="h-0.5 w-12 bg-[#C7AA62]"></span>
+
+          <span class="text-xs font-bold uppercase tracking-[4px] text-[#C7AA62] sm:text-sm">
+            Bem-vindo à HaShem
+          </span>
+
+        </div>
+
+
+        <h1
+          class="font-chakra text-6xl font-bold leading-[.9] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
+          HaShem
+        </h1>
+
+
+        <div
+          class="mt-6 flex flex-wrap items-center gap-3 text-sm font-bold uppercase tracking-[3px] text-white sm:text-base">
+
+          <span>Jiu-Jitsu</span>
+
+          <span class="h-1.5 w-1.5 rounded-full bg-[#C7AA62]"></span>
+
+          <span>Muay Thai</span>
+
+        </div>
+
+
+        <h2 class="mt-7 max-w-2xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+
+          Treine
+          <span class="text-[#C7AA62]">corpo</span>,
+          <span class="text-[#C7AA62]">mente</span>
+          e
+          <span class="text-[#C7AA62]">espírito.</span>
+
+        </h2>
+
+
+        <p class="mt-6 max-w-xl text-base leading-7 text-white/75 sm:text-lg">
+
+          Mais que uma academia, um ambiente para desenvolver
+          disciplina, confiança, respeito e qualidade de vida.
+
+        </p>
+
+
+        <div class="mt-9 flex flex-wrap gap-4">
+
+          <a target="_blank" href="https://wa.me/5585992705922?text=Olá,%20gostaria%20de%20conhecer%20a%20HaShem."
+            class="group flex items-center gap-3 rounded-full bg-[#C7AA62] px-7 py-4 text-sm font-bold uppercase tracking-wide text-[#1D2E47] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#d8bc75] hover:shadow-2xl">
+
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+
+            Aula Experimental
+
+            <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
+
+          </a>
+
+
+          <a href="#modalities"
+            class="hidden items-center gap-3 rounded-full border border-white/30 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition hover:border-[#C7AA62] hover:text-[#C7AA62] sm:flex">
+            Conheça as modalidades
+            <i class="fa-solid fa-arrow-down text-xs"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- INDICADOR -->
+    <a href="#about"
+      class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/50 transition hover:text-[#C7AA62] md:flex">
+      <span class="text-[9px] uppercase tracking-[4px]">
+        Explorar
+      </span>
+
+      <i class="fa-solid fa-chevron-down animate-bounce"></i>
+
+    </a>
+
+  </section>
+
+</header>

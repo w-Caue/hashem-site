@@ -1,0 +1,137 @@
+<section id="store" class="relative overflow-hidden bg-white py-24 lg:py-32">
+
+  <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+    <!-- CABEÇALHO -->
+    <div class="mx-auto max-w-3xl text-center">
+
+      <span class="inline-flex items-center gap-3 text-xs font-bold
+        uppercase tracking-[0.3em] text-[#C7AA62]">
+
+        <span class="h-px w-8 bg-[#C7AA62]"></span>
+        Loja oficial
+        <span class="h-px w-8 bg-[#C7AA62]"></span>
+
+      </span>
+
+      <h2 class="mt-5 font-chakra text-3xl font-bold text-[#1D2E47]
+        sm:text-4xl lg:text-5xl">
+
+        Vista a sua
+        <span class="text-[#C7AA62]">disciplina.</span>
+
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-2xl text-sm leading-7
+        text-gray-500 sm:text-base">
+
+        Leve a essência da HaShem para além do tatame.
+        Confira nossos produtos oficiais e encontre o seu estilo.
+
+      </p>
+
+    </div>
+
+
+    <!-- LISTA DE PRODUTOS -->
+    <div class="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-2
+      lg:mt-16 lg:grid-cols-3">
+
+      @for (produto of produtos; track produto.nome) {
+
+      <article class="group overflow-hidden rounded-2xl border
+          border-gray-100 bg-white shadow-sm
+          transition-all duration-500 hover:-translate-y-2
+          hover:shadow-xl">
+
+        <!-- IMAGEM -->
+        <div class="relative overflow-hidden bg-gray-100">
+
+          <img [src]="produto.imagem" [alt]="produto.nome" class="aspect-[4/4.5] w-full object-cover
+              transition-transform duration-700
+              group-hover:scale-105" loading="lazy">
+
+          <!-- ETIQUETA -->
+          <span class="absolute left-4 top-4 rounded-full
+              bg-[#1D2E47] px-3 py-2 text-[10px]
+              font-bold uppercase tracking-wider text-white">
+
+            {{ produto.categoria }}
+
+          </span>
+
+          <!-- DETALHE DOURADO -->
+          <div class="absolute bottom-0 left-0 h-1 w-full
+              bg-[#C7AA62] transition-all duration-300
+              group-hover:h-2">
+          </div>
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+        <div class="p-6">
+
+          <h3 class="font-chakra text-xl font-bold
+              text-[#1D2E47]">
+
+            {{ produto.nome }}
+
+          </h3>
+
+          <p class="mt-2 min-h-12 text-sm leading-6 text-gray-500">
+
+            {{ produto.descricao }}
+
+          </p>
+
+          <div class="my-5 h-px bg-gray-100">
+          </div>
+
+
+          <!-- PREÇO -->
+          <!-- <div class="mb-5 flex items-center justify-between gap-3">
+
+            <span class="text-xs text-gray-400">
+              Valor do produto
+            </span>
+
+            <span class="font-chakra text-lg font-bold text-[#1D2E47]">
+
+              {{ produto.preco || 'Consulte' }}
+
+            </span>
+
+          </div> -->
+
+
+          <!-- BOTÃO WHATSAPP -->
+          <a [href]="gerarLinkWhatsApp(produto)" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center
+              gap-3 rounded-xl bg-[#1D2E47] px-5 py-4
+              text-xs font-bold uppercase tracking-wider
+              text-white transition-all duration-300
+              hover:bg-[#C7AA62] hover:text-[#1D2E47]">
+
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+
+            Consultar no WhatsApp
+
+            <i class="fa-solid fa-arrow-right ml-auto
+                transition-transform duration-300
+                group-hover:translate-x-1">
+            </i>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      }
+
+    </div>
+
+
+  </div>
+
+</section>
